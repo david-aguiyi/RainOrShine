@@ -1,0 +1,50 @@
+<!-- Create an HTML file with the following content -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Forecast</title>
+</head>
+<body>
+  <h1>Weather Forecast for the next 3 days</h1>
+  <div id="forecast"></div>
+
+  <script>
+    // Replace 'YOUR_API_KEY' and 'YOUR_CITY_NAME' with your actual API key and city name.
+    const apiKey = '420e99cc4adf023e23735dcf8cb3512c';
+    const city = 'Ibadan';
+    const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Process and interpret the 'data' to get the forecast for the next 3 days.
+        // The data will contain weather information for multiple timestamps in the future.
+        // Extract and work with the data for the next 3 days from the current date.
+
+        // Example: Get the forecast for the next 3 days (assuming 8 timestamps per day)
+        const forecastList = data.list;
+        const forecastForNext3Days = forecastList.slice(0, 8 * 3); // 8 timestamps per day
+
+        // Render the forecast on the page
+        const forecastDiv = document.getElementById('forecast');
+        forecastForNext3Days.forEach(forecast => {
+          const timestamp = new Date(forecast.dt * 1000);
+          const temperature = forecast.main.temp;
+          const weatherDescription = forecast.weather[0].description;
+
+          const forecastItem = document.createElement('div');
+          forecastItem.textContent = `Date/Time: ${timestamp}, Temperature: ${temperature}°C, Description: ${weatherDescription}`;
+          forecastDiv.appendChild(forecastItem);
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
