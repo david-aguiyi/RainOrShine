@@ -19,9 +19,13 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
 			rel="stylesheet" />
-		<llink
+		<link
 			rel="stylesheet"
-			href="weather.css" />
+			href="style.css" />
+
+		<script
+			defer
+			src="weather.js"></script>
 		<title>Weather App</title>
 	</head>
 	<body>
@@ -41,22 +45,170 @@
 						</svg>
 					</button>
 				</div>
-			</div>
-			<div class="weather-info">
-				<img
-					src="images/Clear.png"
-					alt="" />
-				<div class="weather-info__temp">
-					<h1>32°C</h1>
-					<p>Clear sky</p>
-					<div class="weather-time">
-						<span>Today</span> . <span>Mon, 5 Jun</span>
+
+				<div class="weather-info">
+					<img
+						id="weather-icon"
+						src="images/Shower.png"
+						alt="" />
+					<div class="weather-info__temp">
+						<h1>32<span>°C</span></h1>
+						<p>Clear sky</p>
+						<div class="weather-time">
+							<span>Today </span> . <span> Mon, 5 Jun</span>
+						</div>
+						<div class="weather-location">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none">
+								<g clip-path="url(#clip0_1_275)">
+									<path
+										d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"
+										fill="#88869D" />
+								</g>
+								<defs>
+									<clipPath id="clip0_1_275">
+										<rect
+											width="24"
+											height="24"
+											fill="white" />
+									</clipPath>
+								</defs>
+							</svg>
+							<span>Ibadan</span>
+						</div>
 					</div>
-					<div class="weather-location">
-						<img
-							src=""
-							alt="" />
-						<span>Ibadan</span>
+				</div>
+			</div>
+			<div class="weather-forcast-section">
+				<div class="weather-forecast">
+					<div class="weather-forecast__item">
+						<div class="weather-forecast__item__day">
+							<span>Mon</span>
+						</div>
+						<div class="weather-forecast__item__icon">
+							<img
+								src="images/Clear.png"
+								alt="" />
+						</div>
+						<div class="weather-forecast__item__temp">
+							<span>32°C</span>
+						</div>
+					</div>
+					<div class="weather-forecast__item">
+						<div class="weather-forecast__item__day">
+							<span>Tue</span>
+						</div>
+						<div class="weather-forecast__item__icon">
+							<img
+								src="images/Clear.png"
+								alt="" />
+						</div>
+						<div class="weather-forecast__item__temp">
+							<span>32°C</span>
+						</div>
+					</div>
+					<div class="weather-forecast__item">
+						<div class="weather-forecast__item__day">
+							<span>Wed</span>
+						</div>
+						<div class="weather-forecast__item__icon">
+							<img
+								src="images/Clear.png"
+								alt="" />
+						</div>
+						<div class="weather-forecast__item__temp">
+							<span>32°C</span>
+						</div>
+					</div>
+					<div class="weather-forecast__item">
+						<div class="weather-forecast__item__day">
+							<span>Thu</span>
+						</div>
+						<div class="weather-forecast__item__icon">
+							<img
+								src="images/Clear.png"
+								alt="" />
+						</div>
+						<div class="weather-forecast__item__temp">
+							<span>32°C</span>
+						</div>
+					</div>
+					<div class="weather-forecast__item last_item">
+						<div class="weather-forecast__item__day">
+							<span>Fri</span>
+						</div>
+						<div class="weather-forecast__item__icon">
+							<img
+								src="images/Clear.png"
+								alt="" />
+						</div>
+						<div class="weather-forecast__item__temp">
+							<span>32°C</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="weather-highlights">
+					<p class="highlight">Today's Highlight</p>
+					<div class="weather-highlights__item">
+						<div class="weather-highlights__item__title">
+							<span>Wind status</span>
+						</div>
+						<div class="weather-highlights__item__value">
+							<span>7.7</span>
+							<span>mph</span>
+						</div>
+						<div class="weather-highlights__item__icon">
+							<img
+								src="images/Compass.png"
+								alt="" />
+						</div>
+					</div>
+					<div class="weather-highlights__item">
+						<div class="weather-highlights__item__title">
+							<span>Humidity</span>
+						</div>
+						<div class="weather-highlights__item__value">
+							<span>84</span>
+							<span>%</span>
+						</div>
+						<div class="weather-highlights__item__icon">
+							<div class="progress-bar">
+								<div class="progress-yellow"></div>
+							</div>
+						</div>
+					</div>
+					<div class="weather-highlights__item">
+						<div class="weather-highlights__item__title">
+							<span>Visibility</span>
+						</div>
+						<div class="weather-highlights__item__value">
+							<span>6.4</span>
+							<span>miles</span>
+						</div>
+						<div class="weather-highlights__item__icon">
+							<img
+								src="images/Visibility.png"
+								alt="" />
+						</div>
+					</div>
+					<div class="weather-highlights__item">
+						<div class="weather-highlights__item__title">
+							<span>Air Pressure</span>
+						</div>
+						<div class="weather-highlights__item__value">
+							<span>998</span>
+							<span>mb</span>
+						</div>
+						<div class="weather-highlights__item__icon">
+							<img
+								src="images/Pressure.png"
+								alt="" />
+						</div>
 					</div>
 				</div>
 			</div>

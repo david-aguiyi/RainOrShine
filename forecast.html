@@ -1,50 +1,73 @@
-<!-- Create an HTML file with the following content -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Weather Forecast</title>
 </head>
 <body>
-  <h1>Weather Forecast for the next 3 days</h1>
+  <h1>Weather Forecast</h1>
+  <form id="cityForm">
+    <input
+      type="text"
+      id="cityInput"
+      placeholder="Enter city/country name" />
+    <button type="submit">Get Forecast</button>
+  </form>
   <div id="forecast"></div>
-
   <script>
-    // Replace 'YOUR_API_KEY' and 'YOUR_CITY_NAME' with your actual API key and city name.
-    const apiKey = '420e99cc4adf023e23735dcf8cb3512c';
-    const city = 'Ibadan';
-    const apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+    const apiKey = "npn0ofydsxc70vmz60bg10uxosy5arpar03ami77";
+    let city = ""; // Initialize an empty city variable
 
-    fetch(apiUrl)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Process and interpret the 'data' to get the forecast for the next 3 days.
-        // The data will contain weather information for multiple timestamps in the future.
-        // Extract and work with the data for the next 3 days from the current date.
+    const getWeatherForecast = (city) => {
+      const apiUrl = `https://www.meteosource.com/api/v1/free/point?place_id=${city}&sections=all&timezone=UTC&language=en&units=metric&key=${apiKey}`;
 
-        // Example: Get the forecast for the next 3 days (assuming 8 timestamps per day)
-        const forecastList = data.list;
-        const forecastForNext3Days = forecastList.slice(0, 8 * 3); // 8 timestamps per day
+      fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (!data || !data.daily || !data.daily.data || !Array.isArray(data.daily.data)) {
+            throw new Error("Invalid data format or no weather forecast available.");
+          }
 
-        // Render the forecast on the page
-        const forecastDiv = document.getElementById('forecast');
-        forecastForNext3Days.forEach(forecast => {
-          const timestamp = new Date(forecast.dt * 1000);
-          const temperature = forecast.main.temp;
-          const weatherDescription = forecast.weather[0].description;
+          const forecastList = data.daily.data;
+          const forecastDiv = document.getElementById("forecast");
+          forecastDiv.innerHTML = "";
 
-          const forecastItem = document.createElement('div');
-          forecastItem.textContent = `Date/Time: ${timestamp}, Temperature: ${temperature}°C, Description: ${weatherDescription}`;
-          forecastDiv.appendChild(forecastItem);
+          forecastList.forEach((forecast) => {
+            const date = new Date(forecast.day);
+            const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = date.toLocaleDateString(undefined, options);
+            const weather = forecast.weather;
+            const temperatureMin = forecast.all_day.temperature_min;
+            const temperatureMax = forecast.all_day.temperature_max;
+            const windSpeed = forecast.all_day.wind.speed;
+            const windDirection = forecast.all_day.wind.dir;
+            const cloudCover = forecast.all_day.cloud_cover.total;
+            const precipitation = forecast.all_day.precipitation.total;
+            const forecastItem = document.createElement("div");
+            forecastItem.textContent = `Date: ${formattedDate}, Weather: ${weather}, Min Temperature: ${temperatureMin}°C, Max Temperature: ${temperatureMax}°C, Wind Speed: ${windSpeed} km/h, Wind Direction: ${windDirection}, Precipitation: ${precipitation} mm`;
+            forecastDiv.appendChild(forecastItem);
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("City not found or no weather forecast available for the specified city.");
         });
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+    };
+
+    const cityForm = document.getElementById("cityForm");
+    const cityInput = document.getElementById("cityInput");
+
+    cityForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      city = cityInput.value.trim();
+      if (city !== "") {
+        getWeatherForecast(city);
+      }
+    });
   </script>
 </body>
 </html>
