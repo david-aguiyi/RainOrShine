@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--darkblue: #100e1d;
+	--grey: #a09fb1;
+	--lightgrey: #6e707a;
+	--white: #e7e7eb;
+	--lightgrey2: #1e213a;
+	--darkgrey: #88869d;
+}
+
+body {
+	max-width: 100%;
+	font-family: Raleway;
+}
+
+button svg {
+	fill: var(--white);
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.weather-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.weather-display {
+	background-color: var(--lightgrey2);
+	background-image: url(images/Cloud-background.png);
+	background-blend-mode: overlay;
+	background-repeat: no-repeat;
+	background-position-y: 100px;
+	background-position-x: center;
+	/* background-position: center; */
+	width: 100%;
+}
+
+.weather-info {
+	margin-bottom: 2rem;
+}
+.search-weather {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.2rem;
+}
+
+.search-weather input {
+	width: 40%;
+	height: 40px;
+	border: none;
+	margin-left: 0.3rem;
+	margin-top: 0.5rem;
+	padding: 0.5rem;
+	background-color: var(--grey);
+	font-size: 1rem;
+}
+.search-weather input::placeholder {
+	color: var(--white);
+	font-size: 16px;
+}
+
+button {
+	background-color: var(--grey);
+	width: 2.5rem;
+	height: 2.5rem;
+	flex-shrink: 0;
+	border-radius: 100%;
+	border: none;
+	margin-right: 0.3rem;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.weather-info img#weather-icon {
+	display: flex;
+	margin: 0 auto;
+	margin-top: 8.36rem;
+	margin-bottom: 3rem;
+}
+
+.weather-info__temp {
+	text-align: center;
+}
+
+.weather-info__temp h1 {
+	color: var(--white);
+	font-size: 9rem;
+	display: inline;
+	font-weight: 500;
+}
+.weather-info__temp .deg {
+	color: var(--grey);
+	font-size: 3rem;
+	font-weight: 100;
+}
+
+.weather-info__temp p {
+	color: var(--grey);
+	font-size: 2.25rem;
+	font-weight: 600;
+	margin-top: 1.44rem;
+}
+.weather-time {
+	color: var(--darkgrey);
+	font-size: 1.125rem;
+	font-weight: 500;
+	margin-top: 3rem;
+}
+
+.weather-location {
+	display: flex;
+	flex-direction: row;
+	color: var(--grey);
+	align-items: center;
+	margin-top: 2rem;
+	justify-content: center;
+}
+
+.weather-forcast-section {
+	background-color: var(--darkblue);
+	width: 100%;
+}
+
+.weather-forecast {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 77%;
+	margin-top: 2rem;
+}
+
+.weather-forecast__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+	background-color: var(--lightgrey2);
+	width: 7.5rem;
+	height: 11.0625rem;
+	/* flex-shrink: 0; */
+	/* flex-wrap: wrap; */
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--white);
+}
+
+.weather-forecast__item__icon img {
+	width: 90%;
+	margin-left: -1rem;
+}
+
+.last_item {
+	margin-left: 0.8rem;
+}
+
+.weather-highlights {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 3rem;
+	/* justify-content: center; */
+}
+
+.highlight {
+	color: var(--white);
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-left: -8.8rem;
+	margin-bottom: 2rem;
+}
+
+.weather-highlights__item {
+	width: 328px;
+	height: 204px;
+	margin-bottom: 2rem;
+	background-color: var(--lightgrey2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--white);
+	column-gap: 30px;
+	font-weight: 500;
+}
+
+.weather-highlights__item__title {
+	font-size: 24px;
+	margin-top: -2rem;
+}
+
+.weather-highlights__item__value {
+	margin-top: 1em;
+}
+
+.weather-highlights__item__value span:first-child {
+	font-size: 4rem;
+	font-weight: 700;
+}
+
+.weather-highlights__item__value span:last-child {
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.progress-bar {
+	width: 14.3125rem;
+	height: 0.5rem;
+	border-radius: 5rem;
+	margin-top: 1.75rem;
+	background: var(--white);
+}
+
+.progress-yellow {
+	height: 0.5rem;
+	width: 84%;
+	background: #ffec65;
+	border-radius: 4rem;
+}
