@@ -26,24 +26,19 @@
 		<script
 			defer
 			src="weather.js"></script>
-		<title>Weather App</title>
+		<title>RainOrShine</title>
 	</head>
 	<body>
 		<div class="weather-page">
 			<div class="weather-display">
 				<div class="search-weather">
+					<div class="logoName">
+						<span>RainOrShine</span>
+					</div>
 					<input
 						type="text"
+						class="search-bar"
 						placeholder="Search location" />
-					<button>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							height="1em"
-							viewBox="0 0 512 512">
-							<path
-								d="M256 0c17.7 0 32 14.3 32 32V66.7C368.4 80.1 431.9 143.6 445.3 224H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H445.3C431.9 368.4 368.4 431.9 288 445.3V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.3C143.6 431.9 80.1 368.4 66.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H66.7C80.1 143.6 143.6 80.1 224 66.7V32c0-17.7 14.3-32 32-32zM128 256a128 128 0 1 0 256 0 128 128 0 1 0 -256 0zm128-80a80 80 0 1 1 0 160 80 80 0 1 1 0-160z" />
-						</svg>
-					</button>
 				</div>
 
 				<div class="weather-info">
@@ -56,7 +51,7 @@
 						<span class="deg">°C</span>
 						<p>Clear sky</p>
 						<div class="weather-time">
-							<span>Today </span> . <span> Mon, 5 Jun</span>
+							<span>Today </span> . <span class="date"> Mon, 5 Jun</span>
 						</div>
 						<div class="weather-location">
 							<svg
@@ -85,73 +80,8 @@
 				</div>
 			</div>
 			<div class="weather-forcast-section">
-				<div class="weather-forecast">
-					<div class="weather-forecast__item">
-						<div class="weather-forecast__item__day">
-							<span>Mon</span>
-						</div>
-						<div class="weather-forecast__item__icon">
-							<img
-								src="images/Clear.png"
-								alt="" />
-						</div>
-						<div class="weather-forecast__item__temp">
-							<span>32°C</span>
-						</div>
-					</div>
-					<div class="weather-forecast__item">
-						<div class="weather-forecast__item__day">
-							<span>Tue</span>
-						</div>
-						<div class="weather-forecast__item__icon">
-							<img
-								src="images/Clear.png"
-								alt="" />
-						</div>
-						<div class="weather-forecast__item__temp">
-							<span>32°C</span>
-						</div>
-					</div>
-					<div class="weather-forecast__item">
-						<div class="weather-forecast__item__day">
-							<span>Wed</span>
-						</div>
-						<div class="weather-forecast__item__icon">
-							<img
-								src="images/Clear.png"
-								alt="" />
-						</div>
-						<div class="weather-forecast__item__temp">
-							<span>32°C</span>
-						</div>
-					</div>
-					<div class="weather-forecast__item">
-						<div class="weather-forecast__item__day">
-							<span>Thu</span>
-						</div>
-						<div class="weather-forecast__item__icon">
-							<img
-								src="images/Clear.png"
-								alt="" />
-						</div>
-						<div class="weather-forecast__item__temp">
-							<span>32°C</span>
-						</div>
-					</div>
-					<div class="weather-forecast__item last_item">
-						<div class="weather-forecast__item__day">
-							<span>Fri</span>
-						</div>
-						<div class="weather-forecast__item__icon">
-							<img
-								src="images/Clear.png"
-								alt="" />
-						</div>
-						<div class="weather-forecast__item__temp">
-							<span>32°C</span>
-						</div>
-					</div>
-				</div>
+				<div class="p-forecast">Weather Forecast</div>
+				<div class="weather-forecast"></div>
 
 				<div class="weather-highlights">
 					<p class="highlight">Today's Highlight</p>
@@ -169,11 +99,14 @@
 								alt="" />
 						</div>
 					</div>
-					<div class="weather-highlights__item">
+					<div class="weather-highlights__item current_hum">
 						<div class="weather-highlights__item__title">
 							<span>Humidity</span>
 						</div>
 						<div class="weather-highlights__item__value">
+							<div class="progress__overlay">
+								<mark>0</mark><mark>50</mark><mark>100</mark>
+							</div>
 							<span class="humidity">84</span>
 							<span>%</span>
 						</div>

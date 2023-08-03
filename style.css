@@ -47,6 +47,13 @@ button svg {
 .weather-info {
 	margin-bottom: 2rem;
 }
+
+.logoName{
+	color: var(--white);
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-left: 1rem;
+}
 .search-weather {
 	display: flex;
 	flex-direction: row;
@@ -84,6 +91,7 @@ button {
 .weather-info img#weather-icon {
 	display: flex;
 	margin: 0 auto;
+	width: 50%;
 	margin-top: 8.36rem;
 	margin-bottom: 3rem;
 }
@@ -161,7 +169,7 @@ button {
 }
 
 .weather-forecast__item__icon img {
-	width: 90%;
+	width: 50%;
 	margin-left: -1rem;
 }
 
@@ -206,6 +214,7 @@ button {
 
 .weather-highlights__item__value {
 	margin-top: 1em;
+	position: relative;
 }
 
 .weather-highlights__item__value span:first-child {
@@ -213,10 +222,41 @@ button {
 	font-weight: 700;
 }
 
+.humidity{
+	font-size: 4rem;
+}
+
 .weather-highlights__item__value span:last-child {
 	font-size: 2rem;
 	font-weight: 500;
 }
+
+.progress__overlay{
+	position: relative;
+}
+
+.progress__overlay mark{
+	background-color: transparent;
+	position: absolute;
+	display: flex;
+	color: var(--white);
+	align-items: center;
+	flex-direction: row;
+	bottom: -6rem;
+	font-size: 0.7rem;
+	justify-content: space-between;
+}
+
+.progress__overlay mark:nth-child(1){
+	left: -4rem;
+}
+.progress__overlay mark:nth-child(2){
+	left: 3rem;
+}
+.progress__overlay mark:nth-child(3){
+	right: -4.4rem;
+}
+
 
 .progress-bar {
 	width: 14.3125rem;
@@ -231,4 +271,21 @@ button {
 	width: 84%;
 	background: #ffec65;
 	border-radius: 4rem;
+}
+
+.weather-forecast__item__temp {
+	margin-top: 0.5em;
+}
+
+.p-forecast {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-left: 2.4rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	color: var(--white);
+}
+
+.current_hum{
+	padding-top: 1rem;
 }
