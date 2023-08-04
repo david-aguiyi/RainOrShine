@@ -75,7 +75,7 @@ let weather = {
 		const formattedDate = date.toLocaleDateString(undefined, options);
 
 		document.querySelector(".date").innerText = formattedDate;
-		console.log(formattedDate)
+		console.log(formattedDate);
 	},
 
 	displayForecastWeather: function (data2) {
@@ -84,12 +84,28 @@ let weather = {
 			document.querySelector(".weather-forecast");
 
 		weatherForecastContainer.innerHTML = "";
-		forecastList.forEach((forecast) => {
-			const date = new Date(forecast.day);
+		const maxRenderCount = 5;
+		let renderCount = 0;
+		let firstDateIndex = -1;
+		forecastList.forEach((forecast, index) => {
+			if (renderCount >= maxRenderCount) {
+				return;
+			}
+			renderCount++;
+			const nextDate = new Date();
+			nextDate.setDate(nextDate.getDate() + index + 1);
 			const options = {
 				weekday: "short",
+				day: "numeric",
+				month: "short",
 			};
-			const formattedDate = date.toLocaleDateString(undefined, options);
+			var formattedDate = nextDate.toLocaleDateString(undefined, options);
+
+			if (firstDateIndex === -1) {
+				firstDateIndex = index; // Store the index of the first date rendered
+				formattedDate = "Tomorrow";
+			}
+
 			const { weather } = forecast;
 			const { icon, temperature } = forecast.all_day;
 			const { speed } = forecast.all_day.wind;
@@ -131,10 +147,13 @@ let weather = {
 						</div>
 					</div>`;
 
-			weatherForecastContainer.innerHTML += weatherForecastItem;
+
+
+			weatherForecastContainer.innerHTML +=  weatherForecastItem;
 
 			console.log(formattedDate, weather, icon, temperature, speed);
 		});
+		// console.log("Index of the first date rendered:", formattedDate );
 	},
 
 	search: function () {
