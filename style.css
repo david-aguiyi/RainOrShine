@@ -16,9 +16,9 @@
 }
 
 body {
-	max-width: 100%;
+	max-width: 1440px;
 	font-family: Raleway;
-	/* overflow: hidden; */
+	margin: 0 auto;
 }
 
 button svg {
@@ -366,7 +366,6 @@ button {
 		top: 1.5rem;
 	}
 
-
 	.weather-info {
 		margin-top: -7rem;
 	}
@@ -434,5 +433,11 @@ button {
 @media screen and (width >= 1200px) {
 	.weather-info img#weather-icon {
 		width: 35%;
+	}
+}
+
+@media screen and (width >= 2500px) {
+	body {
+		background-color: var(--darkblue);
 	}
 }
