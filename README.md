@@ -27,7 +27,7 @@
 
 <h3>Wanting to know the weather for the day? RainOrShine is a weather app that allows you to search for the weather in your city. It will display the current weather, the high and low for the day, and the weather for the next 5 days. It also displays the current date, humidity, wind speed and much more for the current day. RainOrShine is a responsive app that can be used on any device.</h3>
 
-![screenshot](images\weatherScreenshot.png)
+![screenshot](https://github.com/david-aguiyi/RainOrShine/blob/main/images/weatherScreenshot.png)
 
 
 - Where can I see your demo?
