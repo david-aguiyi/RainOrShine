@@ -147,9 +147,7 @@ let weather = {
 						</div>
 					</div>`;
 
-
-
-			weatherForecastContainer.innerHTML +=  weatherForecastItem;
+			weatherForecastContainer.innerHTML += weatherForecastItem;
 
 			console.log(formattedDate, weather, icon, temperature, speed);
 		});
@@ -166,8 +164,6 @@ let weather = {
 					self.fetchForecastWeather(city);
 					self.fetchCurrentWeather(city);
 					document.querySelector(".search-bar").value = "";
-				} else if (document.querySelector(".search-bar").value === "") {
-					alert("Enter a city name first");
 				}
 			});
 	},
