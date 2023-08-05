@@ -69,13 +69,16 @@ button svg {
 	border: none;
 	margin-left: 0.3rem;
 	margin-top: 0.5rem;
-	padding: 0.5rem;
-	background-color: var(--grey);
+	border-radius: 1rem;
+	padding: 0.9rem;
+	background-color: var(--white);
 	font-size: 1rem;
 }
 .search-weather input::placeholder {
-	color: var(--white);
+	color:black;
 	font-size: 16px;
+	font-weight: 500;
+	opacity: 0.6;
 }
 
 button {
