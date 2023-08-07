@@ -80,6 +80,6 @@ This project was built using the following resources:
 
 ## Contributing 🥄
 
-If you'd like to contribute to foodieFetch, please read the contributing guide. Contributions and bug reports are welcome!
+If you'd like to contribute to RainOrShine, Contributions and bug reports are welcome!
 
 If you like this project, please give it a star ⭐️
