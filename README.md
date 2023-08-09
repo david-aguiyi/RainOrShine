@@ -4,7 +4,7 @@
 
 <div align="center">
   <h2>
-    <a href="https://weather-app-master-mocha.vercel.app/">
+    <a href="https://rain-or-shine-zeta.vercel.app/">
       Demo
     </a>
   </h2>
